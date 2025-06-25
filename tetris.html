@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .game-container {
+            display: flex;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-right: 30px;
+            color: #fff;
+            min-width: 250px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #aaa;
+        }
+        .score-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .score-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .score-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+        .controls {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        canvas {
+            border: 3px solid #4ecdc4;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            body { padding: 5px; }
+            .game-container {
+                flex-direction: column;
+                padding: 15px;
+                margin-top: 10px;
+            }
+            .sidebar {
+                margin-right: 0;
+                margin-bottom: 20px;
+                min-width: auto;
+            }
+            .title { font-size: 24px; }
+            canvas {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title { font-size: 20px; }
+            .score-value { font-size: 24px; }
+            .controls { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="sidebar">
+            <div class="title">TETRIS</div>
+            <div class="subtitle">Created by Antrixsh with Amazon Q</div>
+            
+            <div class="score-section">
+                <div class="score-label">Score</div>
+                <div class="score-value" id="score">0</div>
+            </div>
+            
+            <div class="controls">
+                <strong>Controls:</strong><br>
+                ← → Move Left/Right<br>
+                ↓ Soft Drop<br>
+                ↑ Rotate Piece<br><br>
+                <strong>How to Play:</strong><br>
+                • Fill horizontal lines to clear them<br>
+                • Game ends when pieces reach the top<br>
+                • Each cleared line = 100 points<br>
+                • Use rotation to fit pieces better
+            </div>
+        </div>
+        
+        <canvas id="game" width="300" height="600"></canvas>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
