@@ -17,7 +17,7 @@ This project is a modern recreation of the classic **Tetris** game, built entire
 ## 🖥️ Game Preview
 
 <p align="center">
-  <img src="screenshot.png" alt="Tetris game preview" width="500"/>
+  <img src="screenshots/screenshot.png" alt="Tetris game preview" width="500"/>
 </p>
 
 ---
